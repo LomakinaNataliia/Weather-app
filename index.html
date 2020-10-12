@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Srisakdi:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/173387fead.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card-back">
+        <div>
+          <form id="search-form">
+            <input
+              type="text"
+              id="city-input"
+              class="search-engine"
+              placeholder="Enter Your City (or Search On The Map)"
+              autofocus
+              autocomplete="off"
+            />
+            <input
+              type="submit"
+              value="Search By City Name"
+              class="search-button"
+            />
+            <input
+              type="submit"
+              id="search-by-location"
+              value="Search By Location 🗺"
+              class="search-button"
+            />
+          </form>
+        </div>
+
+        <div class="city-links">
+          <h5 class="last-searched">Last searched:</h5>
+          <a href="#" class="last-searched-cities">Kyiv</a
+          ><a href="#" class="last-searched-cities">Paris</a
+          ><a href="#" class="last-searched-cities">London</a
+          ><a href="#" class="last-searched-cities">Sydney</a>
+        </div>
+
+        <div class="card-body">
+          <h4 id="current-weather-date"></h4>
+          <h1 id="city"></h1>
+
+          <div class="row today-info">
+            <div class="col-4">
+              <p class="left-block">
+                Humidity: <span id="humidity"></span>% <br />
+                Wind: <span id="wind"></span> km/h
+              </p>
+            </div>
+
+            <div class="col-4">
+              <div class="row">
+                <div class="col-8 main-block">
+                  <span class="temperature" id="temperature"></span>
+                  <span class="units">
+                    <a href="#" class="celsius-link" id="celsius-link">°C</a>
+                    |
+                    <a href="#" class="fahrenheit-link" id="fahrenheit-link"
+                      >°F</a
+                    >
+                  </span>
+                </div>
+
+                <div class="col-4 main-icon">
+                  <p><i class="fas fa-bolt"></i></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <p class="right-block">
+                Sunrise at <span id="sunrise"></span><br />
+                Sunset at <span id="sunset"></span>
+              </p>
+            </div>
+          </div>
+          <p class="feels-like">Feels like: <span id="feels-like"></span> °C</p>
+
+          <p class="description" id="description"></p>
+        </div>
+
+        <div>
+          <div class="row">
+            <div class="col">
+              <div class="row">
+                <div class="col-6 forecast-image">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="col-6 forecast">Sun 18°C</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col-6 forecast-image">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
+                <div class="col-6 forecast">Mon 23°C</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col-6 forecast-image">
+                  <i class="fas fa-cloud"></i>
+                </div>
+                <div class="col-6 forecast">Tue 23°C</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col-6 forecast-image">
+                  <i class="fas fa-cloud-sun"></i>
+                </div>
+                <div class="col-6 forecast">Wed 25°C</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col-6 forecast-image">
+                  <i class="fas fa-sun"></i>
+                </div>
+                <div class="col-6 forecast">Thu 28°C</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Coded by
+      <a
+        class="coder"
+        href="https://www.linkedin.com/in/nataliia-lomakina-733308152/"
+        target="_blank"
+      >
+        Nataliia Lomakina
+      </a>
+    </footer>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>
