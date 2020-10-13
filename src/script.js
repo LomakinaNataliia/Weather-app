@@ -122,20 +122,20 @@ function searchCityLocation(event) {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
+//display the current date and time using
+
 let currentWeatherDate = document.querySelector("#current-weather-date");
 let now = new Date();
 currentWeatherDate.innerHTML = formatDate(now);
 
-//On your project, when a user searches for a city (example: New York),
-//it should display the name of the city on the result page and the current
-//temperature of the city.
+//when a user searches for a city it should display the name of the city 
+//on the result page and the current temperature of the city.
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCityName);
 
 search("Kyiv");
-//Add a Current Location button.When clicking on it, it uses the Geolocation API to get your
-//GPS coordinates and display and the city and current temperature using the OpenWeather API.
+//use the Geolocation API to get GPS coordinates and display and the city and current temperature
 
 let locationButton = document.querySelector("#search-by-location");
 locationButton.addEventListener("click", searchCityLocation);
