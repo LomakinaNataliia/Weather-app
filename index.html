@@ -8,10 +8,8 @@
       href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Srisakdi:wght@700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -35,13 +33,13 @@
               type="text"
               id="city-input"
               class="search-engine"
-              placeholder="Enter Your City (or Search On The Map)"
+              placeholder="Enter Your City"
               autofocus
               autocomplete="off"
             />
             <input
               type="submit"
-              value="Search By City Name"
+              value="Search"
               class="search-button"
             />
             <input
@@ -64,44 +62,29 @@
         <div class="card-body">
           <h4 id="current-weather-date"></h4>
           <h1 id="city"></h1>
+          <p class="description" id="description"></p>
 
           <div class="row today-info">
-            <div class="col-4">
-              <p class="left-block">
-                Humidity: <span id="humidity"></span>% <br />
-                Wind: <span id="wind"></span> km/h
-              </p>
-            </div>
-
-            <div class="col-4">
-              <div class="row">
-                <div class="col-8 main-block">
-                  <span class="temperature" id="temperature"></span>
-                  <span class="units">
-                    <a href="#" class="celsius-link" id="celsius-link">°C</a>
+                                    
+            <div class="col left-block">
+              <span class="temperature" id="temperature"></span>
+                <span class="units">
+                <a href="#" class="celsius-link" id="celsius-link">°C</a>
                     |
-                    <a href="#" class="fahrenheit-link" id="fahrenheit-link"
-                      >°F</a
-                    >
-                  </span>
-                </div>
-
-                <div class="col-4 main-icon">
-                  <p><i class="fas fa-bolt"></i></p>
-                </div>
-              </div>
+                <a href="#" class="fahrenheit-link" id="fahrenheit-link">°F</a>
+              </span>                                    
+              <p class="feels-like">Feels like: <span id="feels-like"></span> °C</p>
             </div>
 
-            <div class="col-4">
-              <p class="right-block">
-                Sunrise at <span id="sunrise"></span><br />
-                Sunset at <span id="sunset"></span>
-              </p>
+            <div class="col right-block">
+                <p>Humidity: <span id="humidity"></span>% <br />
+                    Wind: <span id="wind"></span> km/h
+                </p>
+                <p>Sunrise at <span id="sunrise"></span><br />
+                    Sunset at <span id="sunset"></span>
+                </p>
             </div>
-          </div>
-          <p class="feels-like">Feels like: <span id="feels-like"></span> °C</p>
-
-          <p class="description" id="description"></p>
+          </div>  
         </div>
 
         <div>
@@ -130,6 +113,8 @@
                 <div class="col-6 forecast">Tue 23°C</div>
               </div>
             </div>
+          </div>
+          <div class="row">
             <div class="col">
               <div class="row">
                 <div class="col-6 forecast-image">
@@ -144,6 +129,14 @@
                   <i class="fas fa-sun"></i>
                 </div>
                 <div class="col-6 forecast">Thu 28°C</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col-6 forecast-image">
+                  <i class="fas fa-cloud-sun"></i>
+                </div>
+                <div class="col-6 forecast">Fri 30°C</div>
               </div>
             </div>
           </div>

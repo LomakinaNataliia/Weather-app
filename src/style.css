@@ -5,7 +5,7 @@ div.container {
   padding: 35px 110px;
   display: block;
 
-  width: 900px;
+  width: 700px;
 }
 
 div.card-back {
@@ -20,7 +20,7 @@ input.search-engine {
   color: #f8ecff;
   border: 1px solid #f8ecff;
   border-radius: 3px;
-  width: 340px;
+  width: 225px;
 }
 
 input.search-button {
@@ -68,17 +68,23 @@ div.card-body {
 #city {
   text-align: center;
   font-size: 50px;
-  font-family: "Srisakdi", cursive;
+  font-family: "Dancing Script", cursive;
 }
 
-p.left-block {
-  margin-top: 10px;
-  text-align: right;
+p.description {
+  text-align: center;
   font-size: 20px;
+
+  font-family: "Staatliches", cursive;
 }
 
-div.main-block {
-  text-align: right;
+div.left-block {
+  margin: 20px;
+  box-shadow: 0px 1px 4px 1px rgba(112, 132, 163, 0.5);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 15px;
 }
 
 span.temperature {
@@ -98,29 +104,20 @@ a.fahrenheit-link {
   color: #f8ecff;
 }
 
-div.main-icon {
-  font-size: 50px;
-  text-align: left;
-  padding: 0;
-  margin-top: 2%;
-}
-
-p.right-block {
-  margin-top: 10px;
-  text-align: left;
-  font-size: 20px;
-}
-
 p.feels-like {
   font-style: italic;
   text-align: center;
 }
 
-p.description {
+div.right-block {
+  font-size: 18px;
   text-align: center;
-  font-size: 20px;
-  margin-top: 20px;
-  font-style: italic;
+  margin: 20px;
+
+  box-shadow: 0px 1px 4px 1px rgba(112, 132, 163, 0.5);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding-top: 5px;
 }
 
 div.forecast-image {
