@@ -75,7 +75,7 @@ div.card-body {
   color: #c9afc7;
 }
 
-#current-weather-date {
+h5 {
   text-align: center;
 }
 
@@ -142,7 +142,11 @@ div.right-block {
   box-shadow: 0px 1px 4px 1px rgba(112, 132, 163, 0.5);
   border: 1px solid transparent;
   border-radius: 10px;
-  padding-top: 5px;
+  padding-top: 25px;
+}
+
+.main-icon {
+  font-size: 200%;
 }
 
 div.forecast-image {

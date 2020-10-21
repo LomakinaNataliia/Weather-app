@@ -1,4 +1,6 @@
-function formatDate(now) {
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+
   let days = [
     "Sunday",
     "Monday",
@@ -9,10 +11,9 @@ function formatDate(now) {
     "Saturday",
   ];
   let currentDay = days[now.getDay()];
-
-  let currentDate = now.getDate();
-
-  let months = [
+  
+  let currentDate=now.getDate();
+    let months = [
     "01",
     "02",
     "03",
@@ -24,45 +25,26 @@ function formatDate(now) {
     "09",
     "10",
     "11",
-    "12",
-  ];
+    "12", ];
   let currentMonth = months[now.getMonth()];
-
   let currentYear = now.getUTCFullYear();
 
   let currentHour = now.getHours();
-
   let currentMinute = now.getMinutes();
-  // if (currentMinute < 10) currentMinute = `0${currentMinute}`;
+      // if (currentMinute < 10) currentMinute = `0${currentMinute}`;
   if (currentMinute < 10) {
     currentMinute = `0${currentMinute}`;
   }
+  
   return `${currentDay} ${currentDate}/${currentMonth}/${currentYear}, ${currentHour}:${currentMinute}`;
-}
-
-function calculateSunrise(sunriseTime) {
-  // Create a new JavaScript Date object based on the timestamp
-  // multiplied by 1000 so that the argument is in milliseconds, not seconds.
-  let sunrise = new Date(sunriseTime * 1000);
-  // Hours part from the timestamp
-  let hoursSunrise = sunrise.getHours();
-  // Minutes part from the timestamp
-  let minutesSunrise = "0" + sunrise.getMinutes();
-  // Will display time in 10:30 format
-  document.querySelector("#sunrise").innerHTML =
-    hoursSunrise + ":" + minutesSunrise.substr(-2);
-}
-
-function calculateSunset(sunsetTime) {
-  let sunset = new Date(sunsetTime * 1000);
-  let hoursSunset = sunset.getHours();
-  let minutesSunset = "0" + sunset.getMinutes();
-  document.querySelector("#sunset").innerHTML =
-    hoursSunset + ":" + minutesSunset.substr(-2);
 }
 
 function showWeather(response) {
   console.log(response);
+
+  let dateElement=document.querySelector("#current-weather-date");
+  dateElement.innerHTML=formatDate(response.data.dt * 1000);
+ 
   let cityName = document.querySelector("#city");
   cityName.innerHTML = response.data.name;
 
@@ -74,11 +56,6 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-
-  let sunriseTime = response.data.sys.sunrise;
-  calculateSunrise(sunriseTime);
-  let sunsetTime = response.data.sys.sunset;
-  calculateSunset(sunsetTime);
 
   document.querySelector("#feels-like").innerHTML = Math.round(
     response.data.main.feels_like
@@ -121,12 +98,6 @@ function searchCityLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
-
-//display the current date and time using
-
-let currentWeatherDate = document.querySelector("#current-weather-date");
-let now = new Date();
-currentWeatherDate.innerHTML = formatDate(now);
 
 //when a user searches for a city it should display the name of the city 
 //on the result page and the current temperature of the city.
