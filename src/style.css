@@ -109,11 +109,11 @@ span.temperature {
 span.units {
   font-size: 20px;
   position: relative;
-  top: -20px;
+  top: -34px;
 }
 
 a.celsius-link {
-  color: #c9afc7;
+  color: #acbfe5;
 }
 
 a.celsius-link:hover {
@@ -121,11 +121,21 @@ a.celsius-link:hover {
 }
 
 a.fahrenheit-link {
-  color: #c9afc7;
+  color: #acbfe5;
 }
 
 a.fahrenheit-link:hover {
   color: #acbfe5;
+}
+
+a.active {
+  color: #c9afc7;
+  cursor: default;
+}
+
+a.active:hover {
+  text-decoration: none;
+  color: #c9afc7;
 }
 
 div.right-block {

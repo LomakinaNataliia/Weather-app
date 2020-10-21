@@ -51,9 +51,12 @@ function showWeather(response) {
   let descriptionElement= document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
 
+  celsiusTemperature=response.data.main.temp;
   let temperatureToday = document.querySelector("#temperature");
-  let temp = Math.round(response.data.main.temp);
-  temperatureToday.innerHTML = temp;
+  temperatureToday.innerHTML = Math.round(celsiusTemperature);
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 
   let feelsLikeElement=document.querySelector("#feels-like");
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
@@ -81,12 +84,7 @@ function searchCityName(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   let city = cityInput.value;
-  let apiKey = `df6d0c618d1d938dbbaf07dbd577f2e4`;
-  let units = `metric`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}`;
-  // or let city = document.querySelector("#city-input").value;
   search(city);
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
 }
 
 function handlePosition(position) {
@@ -104,36 +102,41 @@ function searchCityLocation(event) {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let tempFahrenheit = celsiusTemperature * 1.8 + 32;
+  let temperatureToday = document.querySelector("#temperature");
+  temperatureToday.innerHTML=Math.round(tempFahrenheit);
+  
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureToday = document.querySelector("#temperature");
+  temperatureToday.innerHTML=Math.round(celsiusTemperature);
+}
+
+search("Kyiv");
+
 //when a user searches for a city it should display the name of the city 
 //on the result page and the current temperature of the city.
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCityName);
 
-search("Kyiv");
 //use the Geolocation API to get GPS coordinates and display and the city and current temperature
-
 let locationButton = document.querySelector("#search-by-location");
 locationButton.addEventListener("click", searchCityLocation);
 
-//Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit.
-//When clicking on it, it should convert the temperature to Fahrenheit.
-//When clicking on Celsius, it should convert it back to Celsius.
+//When clicking on fahrenheit link, it should convert the temperature to Fahrenheit.
+let celsiusTemperature=null;
 
-// function convertToFahrenheit() {
-//   let convertTemperatureToday = document.querySelector("#temperature");
-//   let tempFahrenheit = Math.round(convertTemperatureToday * 1.8 + 32);
-//   convertTemperatureToday.innerHTML = tempFahrenheit;
-// }
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
-// function convertToCelsius() {
-//   let convertTemperatureToday = document.querySelector("#temperature");
-//   let tempCelsius = Math.round(((convertTemperatureToday.value - 32) * 5) / 9);
-//   convertTemperatureToday.innerHTML = tempCelsius;
-// }
-
-// let fahrenheitLink = document.querySelector("#fahrenheit-link");
-// fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-// let celsiusLink = document.querySelector("#celsius-link");
-// celsiusLink.addEventListener("click", convertToCelsius);
+//When clicking on Celsius link, it should convert it back to Celsius.
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
