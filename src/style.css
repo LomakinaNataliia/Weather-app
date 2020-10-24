@@ -1,36 +1,32 @@
-/*change colors*/
-
 div.container {
   font-family: "Darker Grotesque", sans-serif;
-
+  display: block;
   margin: 0 auto;
   padding: 35px 110px;
-  display: block;
-
   width: 700px;
 }
 
 div.card-back {
   background-image: url(../img/STARRYNIGHT.png);
   background-color: transparent;
-  padding: 25px 15px 15px 15px;
   border-radius: 5px;
   box-shadow: 0px 4px 4px 2px rgba(112, 132, 163, 1);
+  padding: 25px 15px 15px 15px;
 }
 
 input.search-engine {
   background: transparent;
-  color: #c9afc7;
   border: 1px solid #c9afc7;
   border-radius: 3px;
+  color: #c9afc7;
   width: 225px;
 }
 
 input.search-button {
   background: #c9afc7;
-  color: #3d2f59;
   border: 1px solid #c9afc7;
   border-radius: 3px;
+  color: #3d2f59;
 }
 
 input.search-button:hover {
@@ -40,24 +36,16 @@ input.search-button:hover {
 }
 
 div.city-links {
-  text-align: center;
   font-size: 20px;
+  text-align: center;
   margin: 10px;
 }
 
-h5.last-searched {
-  display: inline;
+div.last-apdated {
   color: #c9afc7;
-}
-
-a.last-searched-cities {
-  margin: 0 10px;
-  font-style: italic;
-  color: #c9afc7;
-}
-
-a.last-searched-cities:hover {
-  color: #acbfe5;
+  font-size: 22px;
+  margin: 15px;
+  text-align: center;
 }
 
 div.card-body {
@@ -71,35 +59,30 @@ div.card-body {
   );
   border-radius: 10px;
   box-shadow: 0px 4px 4px 2px rgba(112, 132, 163, 0.4);
-  padding: 0 10px;
   color: #c9afc7;
-  text-align: center;
-}
-
-h5 {
+  padding: 0 10px;
   text-align: center;
 }
 
 #city {
   color: #acbfe5;
-
   font-size: 50px;
   font-family: "Dancing Script", cursive;
 }
 
 p.description {
-  font-size: 20px;
   color: #acbfe5;
+  font-size: 20px;
   font-family: "Staatliches", cursive;
   margin-bottom: auto;
 }
 
-div.left-block {
-  margin: 20px;
-
+div.block {
   box-shadow: 0px 1px 4px 1px rgba(112, 132, 163, 0.5);
   border: 1px solid transparent;
   border-radius: 10px;
+
+  margin: 20px;
 }
 
 span.temperature {
@@ -134,18 +117,13 @@ a.active {
 }
 
 a.active:hover {
-  text-decoration: none;
   color: #c9afc7;
+  text-decoration: none;
 }
 
 div.right-block {
   font-size: 20px;
-  margin: 20px;
-  padding: 20px;
-
-  box-shadow: 0px 1px 4px 1px rgba(112, 132, 163, 0.5);
-  border: 1px solid transparent;
-  border-radius: 10px;
+  padding: 20px 20px 0px 20px;
 }
 
 p.feels-like {
@@ -154,26 +132,28 @@ p.feels-like {
   margin: auto;
 }
 
-div.forecast-image {
-  margin-top: 10px;
-  text-align: right;
-  font-size: 35px;
+.forecast {
   color: #acbfe5;
+  text-align: center;
+  margin: auto;
 }
 
-div.forecast {
-  margin-top: 10px;
-  text-align: left;
-  color: #acbfe5;
+h6.forecast {
+  margin-top: 15px;
+}
+
+.forecast-icon {
+  max-width: 90px;
 }
 
 footer {
-  text-align: center;
-  position: relative;
-  top: 10px;
-  margin: 0 auto;
   color: #00001c;
   font-family: "Darker Grotesque", sans-serif;
+  margin: 0 auto;
+  text-align: center;
+
+  position: relative;
+  top: 10px;
 }
 
 a.footer-links {

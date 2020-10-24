@@ -51,23 +51,17 @@
           </form>
         </div>
 
-        <div class="city-links">
-          <h5 class="last-searched">Last searched:</h5>
-          <a href="#" class="last-searched-cities">Kyiv</a
-          ><a href="#" class="last-searched-cities">Paris</a
-          ><a href="#" class="last-searched-cities">London</a
-          ><a href="#" class="last-searched-cities">Sydney</a>
-        </div>
+        <div class="last-apdated">
+           Last updated on <span id="current-weather-date"></span>
+        </div>    
 
-        <div class="card-body">
-          <h5>Last updated on <span id="current-weather-date"></span></h5>
+        <div class="card-body">          
           <h1 id="city"></h1>
           <p class="description" id="description"></p>
-          <img src="" alt="weather icon" class="main-icon" id="main-icon">
+          <img src="" alt="weather icon" id="main-icon">
 
-          <div class="row today-info">
-                                    
-            <div class="col left-block">
+          <div class="row today-info">                                    
+            <div class="col block">
               <span class="temperature" id="temperature"></span>
                 <span class="units">
                 <a href="#" class="celsius-link active" id="celsius-link">°C</a>
@@ -76,66 +70,18 @@
               </span>                               
             </div>
 
-            <div class="col right-block">
+            <div class="col block right-block">
               <p class="feels-like">Feels like: <span id="feels-like"></span> °C</p>
-              <p>Humidity: <span id="humidity"></span>% <br />
-                 Wind: <span id="wind"></span> km/h </p>                
+              <p>Humidity: <span id="humidity"></span>% <br />Wind: <span id="wind"></span> km/h </p>                
             </div>
           </div>  
         </div>
 
-        <div>
-          <div class="row">
-            <div class="col">
-              <div class="row">
-                <div class="col-6 forecast-image">
-                  <i class="fas fa-bolt"></i>
-                </div>
-                <div class="col-6 forecast">Sun 18°C</div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="row">
-                <div class="col-6 forecast-image">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
-                <div class="col-6 forecast">Mon 23°C</div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="row">
-                <div class="col-6 forecast-image">
-                  <i class="fas fa-cloud"></i>
-                </div>
-                <div class="col-6 forecast">Tue 23°C</div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="row">
-                <div class="col-6 forecast-image">
-                  <i class="fas fa-cloud-sun"></i>
-                </div>
-                <div class="col-6 forecast">Wed 25°C</div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="row">
-                <div class="col-6 forecast-image">
-                  <i class="fas fa-sun"></i>
-                </div>
-                <div class="col-6 forecast">Thu 28°C</div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="row">
-                <div class="col-6 forecast-image">
-                  <i class="fas fa-cloud-sun"></i>
-                </div>
-                <div class="col-6 forecast">Fri 30°C</div>
-              </div>
-            </div>
+        <div class="row" id="forecast">
+          <div class="col-3">
+              <h6 class="forecast" id="forecast-time">12:00</h6> 
+              <img src="" alt="weather icon" class="forecast-icon" id="forecast-icon">
+              <p class="forecast"><strong id="forecast-max"></strong>⁰ | <span id="forecast-min"></span>⁰</p> 
           </div>
         </div>
       </div>
